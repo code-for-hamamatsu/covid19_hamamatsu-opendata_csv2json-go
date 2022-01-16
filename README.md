@@ -1,0 +1,1 @@
+# covid19_hamamatsu-opendata_csv2json-go
