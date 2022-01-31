@@ -35,6 +35,10 @@ func (ca *csvAccessor) GetCSVDataFrameFromApi(apiAddress string, apiId string) (
 		logger.Errors(err)
 		return nil, time.Time{}, err
 	}
+
+	// キャッシュしないアドレスへ変換する
+	csvAddress = strings.Replace(csvAddress, "static.hamamatsu.odpf.net", "prd-hmpf-s3-odpf-01.s3.ap-northeast-1.amazonaws.com", 1)
+
 	logger.Infof("csv address = %v", csvAddress)
 	logger.Infof("update time = %v", updatedDateTime)
 
